@@ -10,6 +10,7 @@ class Solution:
 #         return profit
         
         # o(n) approach
+        # two pointers technique
         profit = 0
         p1, p2 = 0, 1
         
