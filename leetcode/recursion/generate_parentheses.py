@@ -10,8 +10,8 @@ class Solution:
 
             if open_count < n:
                 temp.append("(")
-                recursive(open_count + 1, closed_count)
-                temp.pop()
+                recursive(open_count + 1, closed_count) # looks at all open parentheses possibilities first
+                temp.pop() # after they are all considered, removes one and looks at next conditional
 
             if open_count > closed_count:
                 temp.append(")")
