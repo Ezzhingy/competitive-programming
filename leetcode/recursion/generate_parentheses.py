@@ -1,5 +1,5 @@
 class Solution:        
-    def generateParenthesis(self, n: int) -> List[str]:
+    def generateParenthesis(n):
         
         # Code credit to NeetCode
         
@@ -12,11 +12,12 @@ class Solution:
                 temp.append("(")
                 recursive(open_count + 1, closed_count) # looks at all open parentheses possibilities first
                 temp.pop() # after they are all considered, removes one and looks at next conditional
+                           # will add any possible ')' next, looking at all possibilities
 
             if open_count > closed_count:
                 temp.append(")")
-                recursive(open_count, closed_count + 1)
-                temp.pop()
+                recursive(open_count, closed_count + 1) # will always be the last recursion
+                temp.pop() # removes all rightmost ')'
                 
         res = []
         temp = []
